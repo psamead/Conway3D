@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Game of Life in 3D</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; overflow: hidden; font-family: 'Courier New', monospace; }
+  #container { width: 100vw; height: 100vh; }
+  #ui {
+    position: fixed; top: 20px; left: 20px;
+    color: #aaa; font-size: 13px; line-height: 2;
+    pointer-events: none; user-select: none;
+  }
+  #ui b { color: #fff; }
+  #ui a {
+    color: #e84; text-decoration: none;
+    pointer-events: auto; cursor: pointer;
+  }
+  #pauseBtn {
+    margin-top: 10px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ccc; font-size: 12px; font-family: inherit;
+    cursor: pointer; pointer-events: auto;
+    letter-spacing: 1px;
+  }
+  #pauseBtn:hover { background: rgba(255,255,255,0.15); }
+  #gen {
+    position: fixed; bottom: 20px; right: 20px;
+    color: rgba(255,255,255,0.2); font-size: 11px;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+<div id="container"></div>
+<div id="ui">
+  <b>Game of Life in 3D</b><br>
+  <b>Drag</b> to rotate &nbsp;|&nbsp; <b>Scroll</b> to zoom &nbsp;|&nbsp; <b>Space</b> to pause<br>
+  <button id="pauseBtn">PAUSE</button>
+</div>
+<div id="gen">GEN <span id="genNum">0</span></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="conway3d.js"></script>
+</body>
+</html>
